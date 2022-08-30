@@ -1,0 +1,8 @@
+
+<div class="text-center"></div>
+{{data && data.question}}
+<div *ngFor="let option of data?.options">
+<button (click)="onAnswerClick(option)" [ngClass]="option===currentAnswer?'option-active':''">
+  {{option}}
+</button>
+</div>

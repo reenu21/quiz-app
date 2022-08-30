@@ -1,0 +1,33 @@
+<div class="container">
+  <img src="assets/images/quiz.svg" alt="">
+  <div class="form-container">
+
+      <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control form-item">
+
+
+
+      <select name="category" id="category" class="form-select form-item" >
+        <option value="null">Select Category</option>
+        <ng-container *ngFor="let category of categories">
+          <option [value]="category.value">{{category.name}}</option>
+        </ng-container>
+      </select>
+
+
+      <select name="difficulty" id="difficulty" class="form-select form-item">
+        <option >Select Difficulty</option>
+        <option >Easy</option>
+        <option >Medium</option>
+        <option >Hard</option>
+      </select>
+
+
+      <button (click)="submitHandler()" class="btn btn-primary">Submit</button>
+
+
+  </div>
+</div>
+
+
+
+<!-- #6c63ff -->

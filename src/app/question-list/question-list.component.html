@@ -1,0 +1,20 @@
+<!-- Loader start -->
+<div class="text-center" *ngIf="loading">
+  <div class="spinner-border text-primary" style="width: 5rem; height: 5rem;" role="status">
+
+  </div>
+</div>
+
+<!-- Loader end -->
+<div>
+  {{currentIndex+1}} of {{totalLength}}
+</div>
+<p *ngIf="selectOptionError" class="error">Please select the option</p>
+<app-question (answer)="onAnswered($event)" [data]="currentObject">
+
+</app-question>
+<div>
+  <button>Quit</button>
+  <button (click)="next()" *ngIf="!canSubmit">Next Question</button>
+  <button *ngIf="canSubmit">Submit QUiz</button>
+</div>
